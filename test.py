@@ -20,7 +20,7 @@ def calculateNDMI_S2(image: ee.Image):
 
 first = (ee.ImageCollection('COPERNICUS/S2_SR')
          .filterBounds(ee.Geometry.Point(-70.48, 43.3631))
-         .filterDate('2022-05-31', '2022-12-31').first())
+         .filterDate('2022-05-20', '2022-12-30').first())
 second = (ee.ImageCollection('COPERNICUS/S2_SR')
          .filterBounds(ee.Geometry.Point(-70.48, 43.3631))
          .filterDate('2019-01-02', '2019-12-31').first())
