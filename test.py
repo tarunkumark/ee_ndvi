@@ -10,6 +10,14 @@ def calculateNDVI_S2(image: ee.Image):
     values = {"NIR": image.select('B8'), "RED": image.select('B4')}
     return image.expression("(NIR-RED)/(NIR+RED)", values).rename('NDVI')
 
+def calculateNDWI_S2(image: ee.Image):
+    values = {"GREEN": image.select('B3'), "NIR": image.select('B8')}
+    return image.expression("(GREEN-NIR)/(GREEN+NIR)", values).rename('NDWI')
+
+def calculateNDMI_S2(image: ee.Image):
+    values = {"SWIR": image.select('B11'), "NIR": image.select('B8')}
+    return image.expression("(NIR-SWIR)/(NIR+SWIR)", values).rename('NDMI')
+
 first = (ee.ImageCollection('COPERNICUS/S2_SR')
          .filterBounds(ee.Geometry.Point(-70.48, 43.3631))
          .filterDate('2019-01-01', '2019-12-31').first())
