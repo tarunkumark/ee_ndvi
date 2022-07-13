@@ -38,7 +38,7 @@ def add_ee_layer(self, ee_image_object, vis_params, name):
       control=True
   ).add_to(self)
 
-map_s2 = folium.Map(location=[43.7516, -70.8155], zoom_start=11)
+map_s2 = folium.Map(location=[-70.48, 43.3631], zoom_start=11)
 ndvi=calculateNDVI_S2(first)
 # nir = first.select('B5')
 # red = first.select('B4')
@@ -46,9 +46,9 @@ ndvi=calculateNDVI_S2(first)
 # ndviParams = {min: -1, max: 1, 'palette': ['blue', 'white', 'green', 'red', 'yellow']}
 # Map.addLayer(ndvi, ndviParams, 'NDVI image');
 folium.Map.add_ee_layer = add_ee_layer
-map_s2.add_ee_layer(ndvi, ndviParams, 'NDVI image')
+map_s2.add_ee_layer(ndvi,{'bands': ['NDVI'], 'min': 0, 'max': 2000,'palette': ['blue', 'white', 'green']}, 'NDVI image')
 
 # map_s2.add_ee_layer(
 #     second, {'bands': ['B4', 'B3', 'B2'], 'min': 0, 'max': 2000}, 'second')
-print(ndvi.getInfo())
+print(ndvi.getInfo(), ndvi)
 map_s2.save('ndvi.html')
