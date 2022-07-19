@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e22568b1069b6c9c27a91f2e89cdd296 {
+                #map_cccf7b5b23b9e8c5cbfb7f77e78032d6 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,17 +35,17 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_e22568b1069b6c9c27a91f2e89cdd296" ></div>
+            <div class="folium-map" id="map_cccf7b5b23b9e8c5cbfb7f77e78032d6" ></div>
         
 </body>
 <script>    
     
-            var map_e22568b1069b6c9c27a91f2e89cdd296 = L.map(
-                "map_e22568b1069b6c9c27a91f2e89cdd296",
+            var map_cccf7b5b23b9e8c5cbfb7f77e78032d6 = L.map(
+                "map_cccf7b5b23b9e8c5cbfb7f77e78032d6",
                 {
                     center: [11.080417771330582, 76.86697184464953],
                     crs: L.CRS.EPSG3857,
-                    zoom: 11,
+                    zoom: 10,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -55,30 +55,9 @@
 
         
     
-            var tile_layer_ce87be7cce00f522c06f112027ecf24d = L.tileLayer(
+            var tile_layer_16abbc58be5235b768299a6ca4b83a96 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_e22568b1069b6c9c27a91f2e89cdd296);
-        
-    
-            var tile_layer_5210ee59b34ddbf5e517fb94af125227 = L.tileLayer(
-                "https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/2684636294877ab3b64d59858216df71-7be17446e9ecdb39eb9c7e0907062d35/tiles/{z}/{x}/{y}",
-                {"attribution": "Map Data \u0026copy; \u003ca href=\"https://earthengine.google.com/\"\u003eGoogle Earth Engine\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_e22568b1069b6c9c27a91f2e89cdd296);
-        
-    
-            var layer_control_647bcfb02c69274def6a698cd58def08 = {
-                base_layers : {
-                    "openstreetmap" : tile_layer_ce87be7cce00f522c06f112027ecf24d,
-                },
-                overlays :  {
-                    "NDVI image" : tile_layer_5210ee59b34ddbf5e517fb94af125227,
-                },
-            };
-            L.control.layers(
-                layer_control_647bcfb02c69274def6a698cd58def08.base_layers,
-                layer_control_647bcfb02c69274def6a698cd58def08.overlays,
-                {"autoZIndex": true, "collapsed": true, "position": "topright"}
-            ).addTo(map_e22568b1069b6c9c27a91f2e89cdd296);
+            ).addTo(map_cccf7b5b23b9e8c5cbfb7f77e78032d6);
         
 </script>

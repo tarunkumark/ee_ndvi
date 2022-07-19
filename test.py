@@ -14,6 +14,7 @@ def calculateNDVI_S2(image: ee.Image, geometry: ee.Geometry):
     ndvi =  image.expression("(NIR-RED)/(NIR+RED)", values).rename('NDVI')
     ndvi2 = image.normalizedDifference(['B8','B4']).rename('NDVI')
     return image.addBands(ndvi2.clip(geometry))
+
 def calculateNDWI_S2(image: ee.Image):
     values = {"GREEN": image.select('B3'), "NIR": image.select('B8')}
     return image.expression("(GREEN-NIR)/(GREEN+NIR)", values).rename('NDWI')
@@ -38,6 +39,7 @@ def add_ee_layer(self, ee_image_object, vis_params, name):
       overlay=True,
       control=True
   ).add_to(self)
+  
 ndvi=calculateNDVI_S2(first, geometry)
 folium.Map.add_ee_layer = add_ee_layer
 
